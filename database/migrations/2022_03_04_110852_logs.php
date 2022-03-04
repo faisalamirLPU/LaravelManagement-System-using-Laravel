@@ -16,8 +16,8 @@ class Logs extends Migration
         //Id, log_text, log_by(user id foreign key), created at, updated_at, user_type(foreign key)
 
         Schema::create('logs', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('log_text');
+            $table->increments('id');
+            $table->string('log_text')->nullable();
             $table->integer('log_by')->unsigned();
             $table->foreign('log_by')->references('id')->on('users');
             //$table->string('log_by');
@@ -26,7 +26,7 @@ class Logs extends Migration
             // $table->timestamp('content_writer_name');
             // $table->string('content_link');
             // $table->string('content_status');
-            $table->rememberToken();
+            //$table->rememberToken();
             $table->timestamps();
         });
     }
@@ -39,5 +39,6 @@ class Logs extends Migration
     public function down()
     {
         //
+        Schema::drop('logs');
     }
 }

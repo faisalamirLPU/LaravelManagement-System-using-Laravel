@@ -16,14 +16,14 @@ class Topics extends Migration
         //
 
         Schema::create('topics', function (Blueprint $table) {
-            $table->increments('id')->unique();
-            $table->string('topic_name');
-            $table->string('topic_date');
+             $table->increments('id');
+             $table->string('topic_name');
+             $table->date('topic_date');
             // $table->timestamp('content_writer_name');
             // $table->string('content_link');
             // $table->string('content_status');
-            $table->rememberToken();
-            $table->timestamps();
+             $table->rememberToken();
+             $table->timestamps();
         });
     }
 
@@ -35,5 +35,6 @@ class Topics extends Migration
     public function down()
     {
         //
+        Schema::drop('topics');
     }
 }
