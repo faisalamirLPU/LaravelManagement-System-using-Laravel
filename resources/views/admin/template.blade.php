@@ -34,7 +34,7 @@
     <div id="wrapper">
 
         <!-- Sidebar-->
-        @include('common.sidebar')
+        @include('admin\partials.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -44,7 +44,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('common.header')
+                @include('admin\partials.header')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -55,7 +55,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            @include('common.footer')
+            @include('admin\partials.footer')
             <!-- End of Footer -->
 
         </div>
