@@ -2,7 +2,7 @@
 <h1>Hello world</h1>
 
 
-<table>
+<!-- <table>
     <th><h3>REGISTRATION</h3></th>
 </table>
 
@@ -15,7 +15,7 @@
   <input type="submit" value="Register" />
 
 
-</form>
+</form> -->
 
 
 
