@@ -17,7 +17,7 @@ class Logs extends Migration
 
         Schema::create('logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('log_text')->nullable();
+            $table->string('log_text');
             $table->integer('log_by')->unsigned();
             $table->foreign('log_by')->references('id')->on('users');
             //$table->string('log_by');
