@@ -65,7 +65,7 @@
                             </div>
 
                             <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                            <i class="fa-brands fa-google mr-2"></i> Login with Google
                                         </a>
                         </div>
                     </form>
