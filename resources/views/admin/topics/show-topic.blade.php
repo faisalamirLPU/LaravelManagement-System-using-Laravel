@@ -388,29 +388,23 @@
                                     <thead>
                                         <tr>
                                             <th>Topic ID</th>
-                                            <th>User ID</th>
+                                            
                                             <th>Topic Name</th>
-                                            <th>Reference Article/th>
+                                            <th>Reference Article</th>
                                             <th>Channel</th>
-                                            <th>Delete</th>
                                             <th>Edit</th>
-                                            <!-- <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th> -->
+                                            
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>Topic ID</th>
-                                            <th>User ID</th>
+                                            
                                             <th>Topic Name</th>
-                                            <th>Reference Article/th>
+                                            <th>Reference Article</th>
                                             <th>Channel</th>
-                                            <th>Delete</th>
                                             <th>Edit</th>
-                                            <!-- <th>Age</th>
-                                            <th>Start date</th>
-                                            <th>Salary</th> -->
+                                            
                                         </tr>
                                     </tfoot>
 
@@ -418,12 +412,11 @@
                                         @foreach($topics as $topic)
                                         <tr>
                                             <td>{{$topic->id}}</td>
-                                            <td>{{$topic->user_id}}</td>
+                                            <!-- <td>{{$topic->user_id}}</td> -->
                                             <td>{{$topic->topic_name}}</td>
                                             <td>{{$topic->reference_article}}</td>
                                             <td>{{$topic->channel}}</td>
-                                            <td><a href="/delete-topic/{{$topic->id}}" class="btn btn-danger">Delete</a></td>
-                                            <td><a href="/edit-topic/{{$topic->id}}" class="btn btn-success">Edit</a></td>
+                                            <td><a href="{{route('admin-post-edit-topic',['id'=>$topic->id])}}" class="btn btn-success">Edit</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>

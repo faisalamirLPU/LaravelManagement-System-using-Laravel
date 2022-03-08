@@ -28,7 +28,8 @@ Route::get('/add-topic',[App\Http\Controllers\TopicController::class, 'getAddNew
 Route::post('/add-topic',[App\Http\Controllers\TopicController::class, 'postAddNewTopic'])->name('admin-post-add-new-topic');
 Route::get('/show-topic',[App\Http\Controllers\TopicController::class, 'show'])->name('admin-show-topic');
 Route::get('/delete-topic/{id}',[App\Http\Controllers\TopicController::class, 'destroy']);
-Route::get('/edit-topic/{id}',[App\Http\Controllers\TopicController::class, 'edit'])->name('admin-post-edit-add-new-topic');
+Route::get('/edit-topic/{id}',[App\Http\Controllers\TopicController::class, 'getEdit'])->name('admin-get-edit-topic');
+Route::post('/edit-topic/{id}',[App\Http\Controllers\TopicController::class, 'postEdit'])->name('admin-post-edit-topic');
 
 
 
