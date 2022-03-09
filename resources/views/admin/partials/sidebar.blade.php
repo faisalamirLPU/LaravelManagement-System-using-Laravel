@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
 <!-- Sidebar - Brand -->
-<a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+<a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
@@ -82,6 +82,10 @@
             <h6 class="collapse-header">Topic Pages:</h6>
 
             <div class="collapse-divider"></div>
+
+            
+            <!-- <a class="nav-link" href="{{route('admin-show-topic')}}"> Show Topic </a> -->
+            
             <a class="collapse-item" href="{{route('admin-get-add-new-topic')}}">Add Topic</a>
 
             <h6 class="collapse-header">Login Screens:</h6>
