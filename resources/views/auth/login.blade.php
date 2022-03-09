@@ -63,6 +63,10 @@
                                     </a>
                                 @endif
                             </div>
+
+                            <a href="index.html" class="btn btn-google btn-user btn-block">
+                                            <i class="fa-brands fa-google mr-2"></i> Login with Google
+                                        </a>
                         </div>
                     </form>
                 </div>
