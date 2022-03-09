@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\TopicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +16,30 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
+
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('/admin')->group(function () {
+
+    Route::get('/',[App\Http\Controllers\AdminHomeController::class, 'etHome'])->name('admin-get-home');
+
+    Route::prefix('topic')->group(function () {
+        
+        Route::get('/add-topic',[App\Http\Controllers\TopicController::class, 'getAddNewTopic'])->name('admin-get-add-new-topic');
+        Route::post('/add-topic',[App\Http\Controllers\TopicController::class, 'postAddNewTopic'])->name('admin-post-add-new-topic');
+        Route::get('/show-topic',[App\Http\Controllers\TopicController::class, 'show'])->name('admin-show-topic');
+        Route::get('/delete-topic/{id}',[App\Http\Controllers\TopicController::class, 'destroy']);
+        Route::get('/edit-topic/{id}',[App\Http\Controllers\TopicController::class, 'getEdit'])->name('admin-get-edit-topic');
+        Route::post('/edit-topic/{id}',[App\Http\Controllers\TopicController::class, 'postEdit'])->name('admin-post-edit-topic');
+
+    });
+
+});
+
+// Route::post('add',[TopicController::class,'getAddNewTopic']);
