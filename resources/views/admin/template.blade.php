@@ -12,7 +12,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Student Khabri - Video Management Portal</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -34,7 +34,7 @@
     <div id="wrapper">
 
         <!-- Sidebar-->
-        @include('admin\partials.sidebar')
+        @include('admin.partials.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -44,7 +44,7 @@
             <div id="content">
 
                 <!-- Topbar -->
-                @include('admin\partials.header')
+                @include('admin.partials.header')
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->

@@ -15,17 +15,6 @@
                                 <button class="btn btn-primary" type="button">
                                     <i class="fas fa-search fa-sm"></i>
                                 </button>
-                                <!-- Adding POST TOPIC page button-->
-                                <!-- <form>                              
-                                     <div class="input-group">
-                                <div class="input-group-append">
-                                <button class="btn btn-default" type="button"> <a href="{{route('admin-get-add-new-topic')}}">POST TOPIC</a>
-                                    <i class=""></i>
-                                </button>
-                                </div>
-                            </div>
-                            </form> -->
- 
                             </div>
 
                             
