@@ -57,9 +57,9 @@
                                         name="password_confirmation" autocomplete="new-password" placeholder="Repeat Password"  required>
                                     </div>
                                 </div>
-                                <a href="{{ route('login') }}" class="btn btn-primary btn-user btn-block">
+                                <button type="submit" class="btn btn-primary btn-user btn-block">
                                     Register Account
-                                </a>
+                                </button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Register with Google

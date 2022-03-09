@@ -20,13 +20,6 @@ class Logs extends Migration
             $table->string('log_text');
             $table->integer('log_by')->unsigned();
             $table->foreign('log_by')->references('id')->on('users');
-            //$table->string('log_by');
-            // $table->integer('user_type');
-            // $table->foreign('user_type')->references('id')->on('users');
-            // $table->timestamp('content_writer_name');
-            // $table->string('content_link');
-            // $table->string('content_status');
-            //$table->rememberToken();
             $table->timestamps();
         });
     }
