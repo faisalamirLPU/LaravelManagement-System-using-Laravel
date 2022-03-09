@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -353,44 +349,48 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <!-- <h1 class="h3 mb-2 text-gray-800">Tables</h1>
                     <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-                        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
+                        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p> -->
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Add topics Details:-</h6>
                         </div>
                         <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <form method="POST" action="{{route('admin-post-add-new-topic')}}">
-                                    @csrf
-                                    <tbody>
-                                    <h1 class="text-center">Add topics Details:-</h1>
-                                        <tr>
-                                            <td><b>Topic Name</b></td>
-                                            <td><input type="text" name="topic_name" class="form-control" required></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Topic Reference Article</b></td>
-                                            <td><input type="text" name="reference_article" class="form-control" required></td>
-                                        </tr>
-                                        <tr>
-                                            <td><b>Channel</b></td>
-                                            <td><input type="checkbox" name="channel" class="checkbox" required>
-                                            <label for="vehicle1"> Channel Name</label><br>
-                                            </td>
-                                        </tr>
-                                        <tr align="center" >
-                                            <td colspan="2"><input type="submit" name="postTopic" value="Post Topic" class="btn btn-primary"></td>
-                                        </tr>
-                                        
-                                    </tbody>
-                                    </form>
 
-                                </table>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-9">
+                                        <div class="p-4">
+
+                                            <form method="POST" action="{{route('admin-post-add-new-topic')}}">
+                                                @csrf
+
+                                                <div class="form-group">
+                                                    <input type="text" name="topic_name" class="form-control" required placeholder="Topic Name">
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="text" name="reference_article" class="form-control" required placeholder="Topic reference Article">
+                                                </div>
+                                                <div class="form-group">
+                                                    <b>Channel</b> <br>
+                                                    <input type="checkbox" name="channel" class="checkbox" required>
+                                                    <label for="vehicle1"> Channel Name1</label> <br>
+
+                                                </div>
+                                                <div>
+                                                    <a align="center">
+                                                        <input type="submit" name="postTopic" value="Post Topic" class="btn btn-primary">
+                                                    </a>
+                                                </div>
+
+                                            </form>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -9,17 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Edit Topic</title>
+    <title>SB Admin 2 - Add Properties</title>
 
     <!-- Custom fonts for this template -->
-    <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="admin/stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="admin/css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="{{asset('admin/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
+    <link href="admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
 </head>
 
@@ -264,7 +264,7 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_1.svg')}}" alt="...">
+                                        <img class="rounded-circle" src="admin/img/undraw_profile_1.svg" alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -275,7 +275,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_2.svg')}}" alt="...">
+                                        <img class="rounded-circle" src="admin/img/undraw_profile_2.svg" alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -286,7 +286,7 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="{{asset('admin/img/undraw_profile_3.svg')}}" alt="...">
+                                        <img class="rounded-circle" src="admin/img/undraw_profile_3.svg" alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -316,7 +316,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="{{asset('admin/img/undraw_profile.svg')}}">
+                                <img class="img-profile rounded-circle" src="admin/img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -349,120 +349,111 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <!-- <h1 class="h3 mb-2 text-gray-800">Tables</h1> -->
+                    <h1 class="h3 mb-2 text-gray-800">Tables</h1>
+                    <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+                        For more information about DataTables, please visit the <a target="_blank" href="https://datatables.net">official DataTables documentation</a>.</p>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Edit Topic Details:-</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
                         </div>
                         <div class="card-body">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-9">
-                                        <div class="p-4">
-                                            <!-- <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> -->
-                                            <form method="POST" action="{{route('admin-post-edit-topic',$id)}}">
-                                                @csrf
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <form method="POST" action="{{route('admin-post-add-new-topic')}}">
+                                        @csrf
+                                        <tbody>
+                                            <h1 class="text-center">Add Properties Details:-</h1>
+                                            <tr>
+                                                <td><b>Property Name</b></td>
+                                                <td><input type="text" name="property_name" class="form-control" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Topic Reference Article</b></td>
+                                                <td><input type="text" name="reference_article" class="form-control" required></td>
+                                            </tr>
+                                            <tr>
+                                                <td><b>Channel</b></td>
+                                                <td><input type="checkbox" name="channel" class="checkbox" required>
+                                                    <label for="vehicle1"> Channel Name</label><br>
+                                                </td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td colspan="2"><input type="submit" name="postTopic" value="Post Topic" class="btn btn-primary"></td>
+                                            </tr>
 
-                                                <div class="form-group">
-                                                    <input type="text" name="topic_name" class="form-control" required placeholder="topic Name">
+                                        </tbody>
+                                    </form>
 
-                                                </div>
-                                                <div class="form-group">
-                                                    <input type="text" name="reference_article" class="form-control" required placeholder="Topic reference Article">
-                                                </div>
-                                                <div class="form-group">
-                                                    <b>Channel</b> <br>
-                                                    <input type="checkbox" name="channel" class="checkbox" required>
-                                                    <label for="vehicle1"> Channel Name1</label> <br>
-
-                                                </div>
-                                                <div>
-                                                    <a align="center">
-                                                        <input type="submit" name="postTopic" value="Post Topic" class="btn btn-primary">
-                                                    </a>
-                                                </div>
-
-                                                
-                                            </form>
-
-                                            
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </table>
                             </div>
                         </div>
                     </div>
-                </div>
-                            <!-- /.container-fluid -->
-
-                        </div>
-                        <!-- End of Main Content -->
-
-                        <!-- Footer -->
-                        <footer class="sticky-footer bg-white">
-                            <div class="container my-auto">
-                                <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; Your Website 2020</span>
-                                </div>
-                            </div>
-                        </footer>
-                        <!-- End of Footer -->
-
-                    </div>
-                    <!-- End of Content Wrapper -->
 
                 </div>
-                <!-- End of Page Wrapper -->
+                <!-- /.container-fluid -->
 
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                    <i class="fas fa-angle-up"></i>
-                </a>
+            </div>
+            <!-- End of Main Content -->
 
-                <!-- Logout Modal-->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                            <div class="modal-footer">
-                                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                <a class="btn btn-primary" href="{{route('login')}}">Logout</a>
-                            </div>
-                        </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Your Website 2020</span>
                     </div>
                 </div>
+            </footer>
+            <!-- End of Footer -->
 
-                <!-- Bootstrap core JavaScript-->
-                <script src="admin/vendor/jquery/jquery.min.js'"></script>
-                <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        </div>
+        <!-- End of Content Wrapper -->
 
-                <!-- Core plugin JavaScript-->
-                <script src="admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+    </div>
+    <!-- End of Page Wrapper -->
 
-                <!-- Custom scripts for all pages-->
-                <script src="admin/js/sb-admin-2.min.js"></script>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
 
-                <!-- Page level plugins -->
-                <script src="admin/vendor/datatables/jquery.dataTables.min.js"></script>
-                <script src="admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="{{route('login')}}">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                <!-- Page level custom scripts -->
-                <script src="'admin/js/demo/datatables-demo.js'"></script>
+    <!-- Bootstrap core JavaScript-->
+    <script src="admin/vendor/jquery/jquery.min.js"></script>
+    <script src="admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="admin/js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="admin/vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="admin/js/demo/datatables-demo.js"></script>
 
 </body>
 
 </html>
-
-
-
-
-<!--checing another way-->
